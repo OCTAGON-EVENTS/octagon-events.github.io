@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #313338;
+            color: #F2F3F5;
+        }
+        h1 {
+            justify-content: start;
+        }
+        button {
+            margin-top: 10px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            border: 0px;
+            font-weight: bold;
+            color: white;
+            background-color: #248046;
+        }
+        button:hover {
+            background-color: #1A6334;
+        }
+        button:active{
+            background-color: #15562B;
+        }
+        .seperator {
+            margin-top: 20px;
+            min-height: 2px;
+            background-color: #18191b;
+        }
+        .wrapper {
+            max-width: 600px;
+            margin: 0 60px;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Discord</h1>
+            <div id="discordText"></div>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('discordText').innerText)">Copy</button>
+        </div>
+        <div class="seperator"></div>
+        <div class="wrapper">
+            <h1>VRChat</h1>
+            <div id="vrchatText"></div>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('vrchatText').innerText)">Copy</button>
+        </div>
+    </body>
+    <script type="text/javascript" src="quests.js"></script>
+    <script type="text/javascript" src="cheers.js"></script>
+    <script type="text/javascript" src="eventText.js"></script>
+    <script type="text/javascript">
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert("Copied the text: " + text);
+        }
+        let languages = ['en']
+
+        let rand_quest = quests[Math.floor(Math.random() * quests.length)]
+        let rand_cheers = cheers[Math.floor(Math.random() * cheers.length)]
+        let rand_eventText = eventText[Math.floor(Math.random() * eventText.length)]
+
+        for (let i in languages){
+            let lang = languages[i]
+
+            // DISCORD TEXT
+            let discordText = rand_eventText[lang]['discord']
+            
+            discordText = discordText.replace('<START_TIME>', '11:00')
+            discordText = discordText.replace('<END_TIME>', '04:00')
+
+            discordText = discordText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
+
+            discordText = discordText.replace('<QUEST_TEXT>', rand_quest[lang]['text'].split('\n').join("\n> "))
+                
+            discordText = discordText.replace('<CHEERS_TEXT>', rand_cheers[lang]['text'])
+            discordText = discordText.replace('<CHEERS_LANGUAGE>', rand_cheers[lang]['language'])
+            discordText = discordText.replace('<CHEERS_PRONOUNCIATION>', rand_cheers[lang]['pronunciation'])
+
+            document.getElementById('discordText').innerText += discordText
+            document.getElementById('discordText').innerHTML += '<br>'
+
+            // VRCHAT TEXT
+            let vrchatText = rand_eventText[lang]['vrchat']
+
+            vrchatText = vrchatText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
+            vrchatText = vrchatText.replace('<QUEST_TEXT>', rand_quest[lang]['text'])
+            vrchatText = vrchatText.replace('<CHEERS_TEXT>', rand_cheers[lang]['text'])
+            vrchatText = vrchatText.replace('<CHEERS_LANGUAGE>', rand_cheers[lang]['language'])
+
+            let vrchatCustom = ''
+            for (let j in languages){
+                let j_lang = languages[j]
+                vrchatCustom += !!rand_cheers[j_lang]['pronunciation'] ? languages[j].toUpperCase() + ': ' + rand_cheers[j_lang]['pronunciation'] : ''
+                if (languages.length - 1 != j){
+                    vrchatCustom + '\n'
+                }
+            }
+            vrchatText = vrchatText.replace('<CHEERS_CUSTOM>', vrchatCustom.substring(0, vrchatCustom.length))
+                
+            document.getElementById('vrchatText').innerText += vrchatText
+
+        }
+    </script>
+</html>
