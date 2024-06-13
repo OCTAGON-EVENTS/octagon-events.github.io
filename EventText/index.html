@@ -2,12 +2,14 @@
 <html>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: end;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #313338;
             color: #F2F3F5;
+        }
+        div#content, div#info{
+            display: flex;
+            justify-content: center;
+            align-items: end;
         }
         h1 {
             justify-content: start;
@@ -41,16 +43,19 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="wrapper">
-            <h1>Discord</h1>
-            <div id="discordText"></div>
-            <button onclick="navigator.clipboard.writeText(document.getElementById('discordText').innerText)">Copy</button>
-        </div>
-        <div class="seperator"></div>
-        <div class="wrapper">
-            <h1>VRChat</h1>
-            <div id="vrchatText"></div>
-            <button onclick="navigator.clipboard.writeText(document.getElementById('vrchatText').innerText)">Copy</button>
+        <div id="info">⚠️ Press F5 or reload the page to regenerate ⚠️</div>
+        <div id="content">
+            <div class="wrapper">
+                <h1>Discord</h1>
+                <div id="discordText"></div>
+                <button onclick="navigator.clipboard.writeText(document.getElementById('discordText').innerText)">Copy</button>
+            </div>
+            <div class="seperator"></div>
+            <div class="wrapper">
+                <h1>VRChat</h1>
+                <div id="vrchatText"></div>
+                <button onclick="navigator.clipboard.writeText(document.getElementById('vrchatText').innerText)">Copy</button>
+            </div>
         </div>
     </body>
     <script type="text/javascript" src="quests.js"></script>
