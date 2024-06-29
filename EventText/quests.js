@@ -7,7 +7,8 @@ const quests = [
         "en": {
             "title": "2 Idiots 1 Thought",
             "text": "Pose a 'Would you rather...' question to someone.\nIf your answers match, enjoy a shot together to celebrate your connection.\nIf not, take three sips to appreciate the diversity of opinions!"
-        }
+        },
+        "emoji": "🤓"
     },
 
     {
@@ -18,7 +19,8 @@ const quests = [
         "en" : {
             "title" : "Fresh Meat",
             "text" : "Find a player you don't know or don't remember and start a conversation with 'So, who are you?'.\nIf you hit it off, lift the mood with a shared shot!"
-        }
+        },
+        "emoji": "🥩"
     },
 
     { 
@@ -29,7 +31,8 @@ const quests = [
         "en" : {
             "title" : "Tag Team",
             "text" : "Find yourself a partner for the rest of the event.\nWhen you drink, your partner drinks, and vice versa.\nTogether you're an unbeatable team, enjoying the joys of success together!"
-        }
+        },
+        "emoji": "🤝"
     },
 
     { 
@@ -40,7 +43,8 @@ const quests = [
         "en" : {
             "title" : "Mirror",
             "text" : "Find yourself a partner and swap shots for the remainder of the event."
-        }
+        },
+        "emoji": "🪞"
     },
 
     { 
@@ -51,7 +55,8 @@ const quests = [
         "en" : {
             "title" : "The Anthropomorph",
             "text" : "If someone wears an avatar with animal characteristics, approach them and challenge them with a big gulp."
-        }
+        },
+        "emoji": "🐺"
     },
 
     { 
@@ -62,7 +67,8 @@ const quests = [
         "en" : {
             "title" : "Sharing is caring",
             "text" : "You can share the number of your shots with anyone at any time.\nBoth then drink their number of shots + 1."
-        }
+        },
+        "emoji": "🍻"
     },
 
     { 
@@ -73,7 +79,8 @@ const quests = [
         "en" : {
             "title" : "n + 1",
             "text" : "When someone has to drink, you can give that person another shot by saying 'PLUS ONE'.\nThis rule applies, except for +1 shots on all shots to be taken."
-        }
+        },
+        "emoji": "👆"
     },
 
     { 
@@ -84,7 +91,8 @@ const quests = [
         "en" : {
             "title" : "Eat Soap",
             "text" : "Anyone who uses a swear word may be challenged by others to take a shot."
-        }
+        },
+        "emoji": "🧼"
     },
 
     { 
@@ -95,7 +103,8 @@ const quests = [
         "en" : {
             "title" : "T",
             "text" : "If you see someone in a T-pose, buy them a shot!"
-        }
+        },
+        "emoji": "🍵"
     },
 
     { 
@@ -106,7 +115,8 @@ const quests = [
         "en" : {
             "title" : "GAS GAS GAS!",
             "text" : "Drink for every burp from another person (with a 10-minute cooldown per person)."
-        }
+        },
+        "emoji": "💨"
     },
 
     { 
@@ -117,7 +127,8 @@ const quests = [
         "en" : {
             "title" : "Do you have a life? No, I have VRChat!",
             "text" : "Approach someone, ask them if they have a life, and then guess how many hours they've spent in VRChat.\nIf you guess correctly, the other person drinks; otherwise, you drink."
-        }
+        },
+        "emoji": "🪦"
     },
 
     { 
@@ -128,6 +139,7 @@ const quests = [
         "en" : {
             "title" : "Can you hear Rick?",
             "text" : "When you hear the song 'Never Gonna Give You Up' by Rick Astley, give out five shots."
-        }
+        },
+        "emoji": "👂"
     }
 ]
