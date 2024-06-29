@@ -80,7 +80,7 @@
             
             discordText = discordText.replace('<START_TIME>', '11:00')
             discordText = discordText.replace('<END_TIME>', '04:00')
-                
+
             discordText = discordText.replace('<QUEST_EMOJI>', rand_quest["emoji"])
             discordText = discordText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
 
@@ -96,6 +96,7 @@
             // VRCHAT TEXT
             let vrchatText = rand_eventText[lang]['vrchat']
 
+            vrchatText = vrchatText.replace('<QUEST_EMOJI>', rand_quest["emoji"])
             vrchatText = vrchatText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
             vrchatText = vrchatText.replace('<QUEST_TEXT>', rand_quest[lang]['text'])
             vrchatText = vrchatText.replace('<CHEERS_TEXT>', rand_cheers[lang]['text'])
