@@ -6,7 +6,7 @@ const eventText = [
 
             # :beer: OCTAGON Event :notes:
             > Von \`<START_TIME> Uhr abends\` bis \`<END_TIME> Uhr morgens\`
-            > _Zeiten sind in UTC+2_
+            > _Zeiten sind in MEZ_
             _ _
             ## <QUEST_EMOJI> Event Quest
             > **<QUEST_TITLE>**
@@ -36,7 +36,7 @@ const eventText = [
 
             # :beer: OCTAGON Event :notes:
             > From \`<START_TIME> pm\` till \`<END_TIME> am\`
-            > _Times are in UTC+2_
+            > _Times are in CET_
             _ _
             ## <QUEST_EMOJI> Event Quest
             > **<QUEST_TITLE>**
