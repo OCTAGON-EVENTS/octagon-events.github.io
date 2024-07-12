@@ -17,7 +17,7 @@ const eventText = [
             _<CHEERS_TEXT>!_
             ||<CHEERS_LANGUAGE>: <CHEERS_PRONOUNCIATION>||
 
-            :goggles: [VRChat](<https://vrc.group/OCTO.8998>) | :pig: [Discord](<https://discord.gg/OCTAGON>) | :camera: [Instagram](<https://instagram.com/OCTAGON.VRC>)`,
+            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.VRC>)`,
 
             "vrchat" : `
             <QUEST_EMOJI> <QUEST_TITLE>
@@ -47,7 +47,7 @@ const eventText = [
             _<CHEERS_TEXT>!_
             ||<CHEERS_LANGUAGE>: <CHEERS_PRONOUNCIATION>||
 
-            :goggles: [VRChat](<https://vrc.group/OCTO.8998>) | :pig: [Discord](<https://discord.gg/OCTAGON>) | :camera: [Instagram](<https://instagram.com/OCTAGON.VRC>)`,
+            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.VRC>)`,
 
             "vrchat": `
             <QUEST_EMOJI> <QUEST_TITLE>
