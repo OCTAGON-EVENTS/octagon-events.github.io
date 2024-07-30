@@ -117,7 +117,7 @@
                     let branchLinks = ''
                     let branchName = window.location.hash.substr(1).replaceAll('%20', ' ')
                     if (branchName){
-                        branchLinks = await getAdLinks('Night Club');
+                        branchLinks = await getAdLinks(branchName);
                         branchLinks = branchLinks.replaceAll('\r', '')
                     }
                     let sourceListTemp = (globalLinks + branchLinks).trim().split('\n')
@@ -130,16 +130,28 @@
                             sourceList.push(sourceListTemp[i])
                             continue
                         }
-                        if (new Date(end_date) - new Date(new Date().toISOString().split('T')[0]) > 0){
-                            sourceList.push(sourceListTemp[i])
+                        try {
+                            if (new Date(end_date) - new Date(new Date().toISOString().split('T')[0]) > 0){
+                                sourceList.push(sourceListTemp[i])
+                            }
+                        } catch {
+                            continue
                         }
                     }
                     
                     await delay(5)
 
+                    let runTwoSpots = false
+                    if (sourceList.length > 25){
+                        runTwoSpots = true
+                    }
+                    let spotNumber = 1
                     while (sourceList.length != 0){
 
-                        backgroundOpacityToggle()
+                        if (spotNumber == 1){
+                            backgroundOpacityToggle()
+                        }
+
                         let index = Math.floor(Math.random() * sourceList.length)
 
                         let source = sourceList[index]
@@ -169,10 +181,16 @@
                         sourceListUnavailable.push(sourceList[index])
                         sourceList.splice(index, 1)
                         
-                        backgroundOpacityToggle()
-                        await delay(5)
+                        if (runTwoSpots && spotNumber == 1){
+                            spotNumber += 1
+                            await delay(2)
+                            continue
+                        }else{
+                            spotNumber = 1
+                            backgroundOpacityToggle()
+                            await delay(5*60)
+                        }
                     }
-                    sourceList = sourceListUnavailable
                     sourceListUnavailable = []
                 }
             }
