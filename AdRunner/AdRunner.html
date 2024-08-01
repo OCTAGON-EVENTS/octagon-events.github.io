@@ -112,15 +112,25 @@
             async function loadMedia() {                
                 let sourceListUnavailable = []
                 while (true){
-                    let globalLinks = await getAdLinks();
+                    let globalLinks = ''
+                    try {
+                        globalLinks = await getAdLinks();
+                    } catch {
+
+                    }
                     globalLinks = globalLinks.replaceAll('\r', '')
                     
                     let branchLinks = ''
                     let branchName = window.location.hash.substr(1).replaceAll('%20', ' ')
-                    if (branchName){
-                        branchLinks = await getAdLinks(branchName);
-                        branchLinks = branchLinks.replaceAll('\r', '')
+                    try {
+                        if (branchName){
+                            branchLinks = await getAdLinks(branchName);
+                            branchLinks = branchLinks.replaceAll('\r', '')
+                        }
+                    } catch {
+
                     }
+                    
                     let sourceListTemp = (globalLinks + branchLinks).trim().split('\n')
 
                     let sourceList = []
