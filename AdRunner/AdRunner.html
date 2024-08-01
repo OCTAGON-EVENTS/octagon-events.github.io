@@ -130,7 +130,7 @@
                     } catch {
 
                     }
-                    
+
                     let sourceListTemp = (globalLinks + branchLinks).trim().split('\n')
 
                     let sourceList = []
@@ -138,7 +138,7 @@
                         let filename = sourceListTemp[i].split('?')[0].split('/').reverse()[0]
                         let end_date = filename.split('_')[0]
                         if (end_date.toUpperCase() == 'X'){
-                            sourceList.push(sourceListTemp[i])
+                            sourceList.push(sourceListTemp[i].trim())
                             continue
                         }
                         try {
@@ -149,7 +149,7 @@
                             continue
                         }
                     }
-                    
+                    console.log(sourceList)
                     await delay(5)
 
                     let runTwoSpots = false
