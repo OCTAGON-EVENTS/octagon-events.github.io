@@ -92,18 +92,19 @@
             }
 
             async function getAdLinks(branch = 'Global') {
+                let baseURL = "https://raw.githubusercontent.com/OCTAGON-EVENTS/Ads/main"
                 return new Promise((resolve, reject) => {
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4) {
                             if (this.status == 200) {
-                                resolve(this.responseText);
+                                resolve(baseURL + "/" + branch + "/" + this.responseText);
                             } else {
                                 reject(new Error('Failed to load data'));
                             }
                         }
                     };
-                    xhttp.open("GET", "https://raw.githubusercontent.com/OCTAGON-EVENTS/Ads/main/" + branch, true);
+                    xhttp.open("GET", baseURL + "/" + branch + "/" + branch + ".txt", true);
                     xhttp.send();
                 });
             }
