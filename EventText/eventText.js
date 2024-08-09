@@ -5,10 +5,9 @@ const eventText = [
             :information_source: _Du kannst die Rolle <@&1233131412241121400> jederzeit in <id:customize> entfernen_
 
             # :beer: OCTAGON Event :notes:
-            > Von \`<START_TIME> Uhr abends\` bis \`<END_TIME> Uhr morgens\`
-            > _Zeiten sind in MEZ_
+            > Von **<START_TIME> Uhr** abends bis **<END_TIME> Uhr** morgens
             _ _
-            ## <QUEST_EMOJI> Event Quest
+            ### <QUEST_EMOJI> Event Quest
             > **<QUEST_TITLE>**
             > <QUEST_TEXT>
             
@@ -36,10 +35,9 @@ const eventText = [
             :information_source: _You can remove the <@&1233131412241121400> role in <id:customize> at all times_
 
             # :beer: OCTAGON Event :notes:
-            > From \`<START_TIME> pm\` till \`<END_TIME> am\`
-            > _Times are in CET_
+            > From **<START_TIME>** till **<END_TIME>**
             _ _
-            ## <QUEST_EMOJI> Event Quest
+            ### <QUEST_EMOJI> Event Quest
             > **<QUEST_TITLE>**
             > <QUEST_TEXT>
             

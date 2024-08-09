@@ -66,6 +66,11 @@
             navigator.clipboard.writeText(text);
             alert("Copied the text: " + text);
         }
+        let startDate = new Date(new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
+        let endDate = new Date(new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
+        startDate.setHours(23, 0, 0, 0)
+        endDate.setHours(startDate.getHours() + 5, 0, 0, 0)
+
         let languages = ['en']
 
         let rand_quest = quests[Math.floor(Math.random() * quests.length)]
@@ -78,8 +83,8 @@
             // DISCORD TEXT
             let discordText = rand_eventText[lang]['discord']
             
-            discordText = discordText.replace('<START_TIME>', '11:00')
-            discordText = discordText.replace('<END_TIME>', '04:00')
+            discordText = discordText.replace('<START_TIME>', '<t:' + String(startDate.getTime() / 1000) + ':t>')
+            discordText = discordText.replace('<END_TIME>', '<t:' + String(endDate.getTime() / 1000) + ':t>')
 
             discordText = discordText.replace('<QUEST_EMOJI>', rand_quest["emoji"])
             discordText = discordText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
