@@ -66,8 +66,8 @@
             navigator.clipboard.writeText(text);
             alert("Copied the text: " + text);
         }
-        let startDate = new Date(new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
-        let endDate = new Date(new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
+        let startDate = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
+        let endDate = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
         startDate.setHours(23, 0, 0, 0)
         endDate.setHours(startDate.getHours() + 5, 0, 0, 0)
 
