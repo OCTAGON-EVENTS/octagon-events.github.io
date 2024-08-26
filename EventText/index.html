@@ -60,8 +60,20 @@
     </body>
     <script type="text/javascript" src="quests.js"></script>
     <script type="text/javascript" src="cheers.js"></script>
-    <script type="text/javascript" src="eventText.js"></script>
+    <script type="text/javascript" src="branch/Night Club.js"></script>
+    <script type="text/javascript" src="branch/Rave.js"></script>
     <script type="text/javascript">
+
+        var eventText = ''
+        switch (window.location.hash.substr(1).replace('%20', ' ')){
+            case 'Night Club':
+                eventText = nightClubText;
+                break;
+            case 'Rave':
+                eventText = raveText;
+                break;
+        }
+
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
             alert("Copied the text: " + text);

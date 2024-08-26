@@ -1,11 +1,12 @@
-const eventText = [
+const nightClubText = [
     { 
         "de" : {
             "discord" : `
-            :information_source: _Du kannst die Rolle <@&1233131412241121400> jederzeit in <id:customize> entfernen_
+            :information_source: _Du kannst die Rolle @Event Update︱🔔 jederzeit in <id:customize> entfernen_
 
             # :beer: OCTAGON Event :notes:
-            > Von **<START_TIME> Uhr** abends bis **<END_TIME> Uhr** morgens
+            > :clock11:  Von **<START_TIME> Uhr** abends bis **<END_TIME> Uhr** morgens
+            > :pushpin:  [Instanzen](<https://vrchat.com/home/group/grp_a598c9ca-f698-44e7-9f54-399f1da6e203/instances>)
             _ _
             ### <QUEST_EMOJI> Event Quest
             > **<QUEST_TITLE>**
@@ -32,10 +33,11 @@ const eventText = [
         },
         "en": {
             "discord": `
-            :information_source: _You can remove the <@&1233131412241121400> role in <id:customize> at all times_
+            :information_source: _You can remove the @Event Update︱🔔 role in <id:customize> at all times_
 
             # :beer: OCTAGON Event :notes:
-            > From **<START_TIME>** till **<END_TIME>**
+            > :clock11:  From **<START_TIME>** till **<END_TIME>**
+            > :pushpin:  [Instances](<https://vrchat.com/home/group/grp_a598c9ca-f698-44e7-9f54-399f1da6e203/instances>)
             _ _
             ### <QUEST_EMOJI> Event Quest
             > **<QUEST_TITLE>**
