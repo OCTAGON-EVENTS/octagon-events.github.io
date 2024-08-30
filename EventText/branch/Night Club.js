@@ -17,7 +17,7 @@ const nightClubText = [
             _<CHEERS_TEXT>!_
             ||<CHEERS_LANGUAGE>: <CHEERS_PRONOUNCIATION>||
 
-            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.VRC>)
+            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.Night.Club>)
             _ _`,
 
             "vrchat" : `
@@ -48,7 +48,7 @@ const nightClubText = [
             _<CHEERS_TEXT>!_
             ||<CHEERS_LANGUAGE>: <CHEERS_PRONOUNCIATION>||
 
-            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.VRC>)
+            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.Night.Club>)
             _ _`,
 
             "vrchat": `
