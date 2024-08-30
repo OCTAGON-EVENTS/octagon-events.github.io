@@ -14,7 +14,7 @@ const raveText = [
             _Please disable all OSC text scripts.
             Displaying the music you're listening to during the event is disrespectful to the DJs._
 
-            :vrchat: [VRChat](<https://vrc.group/OCTO.1975>) | :discord: [Discord](<https://discord.gg/w9uuPgYBjg>)
+            :vrchat: [VRChat](<https://vrc.group/OCTO.1975>) | :discord: [Discord](<https://discord.gg/w9uuPgYBjg>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.Rave>)
             _ _`,
 
             "vrchat": `
