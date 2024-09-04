@@ -78,8 +78,10 @@
             navigator.clipboard.writeText(text);
             alert("Copied the text: " + text);
         }
+        let openDoors = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
         let startDate = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
         let endDate = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
+        openDoors.setHours(23, -15, 0 ,0)
         startDate.setHours(23, 0, 0, 0)
         endDate.setHours(startDate.getHours() + 5, 0, 0, 0)
 
@@ -95,8 +97,19 @@
             // DISCORD TEXT
             let discordText = rand_eventText[lang]['discord']
             
+            discordText = discordText.replace('<OPEN_DOORS_TIME>', '<t:' + String(openDoors.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<START_TIME>', '<t:' + String(startDate.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<END_TIME>', '<t:' + String(endDate.getTime() / 1000) + ':t>')
+
+            let lineUpText = ''
+            let lineUpTimes = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
+            lineUpTimes.setHours(23, 0, 0, 0)
+            for (var j = 0; j < 5; j++){
+                lineUpText += '> <t:' + String(lineUpTimes.getTime() / 1000) + ':t> - Name\n'
+                lineUpTimes.setHours(lineUpTimes.getHours() + 1, 0, 0, 0)
+            }
+            discordText = discordText.replace('<LINE_UP>', lineUpText.substr(0, lineUpText.length - 1))
+                
 
             discordText = discordText.replace('<QUEST_EMOJI>', rand_quest["emoji"])
             discordText = discordText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
@@ -118,6 +131,12 @@
             vrchatText = vrchatText.replace('<QUEST_TEXT>', rand_quest[lang]['text'])
             vrchatText = vrchatText.replace('<CHEERS_TEXT>', rand_cheers[lang]['text'])
             vrchatText = vrchatText.replace('<CHEERS_LANGUAGE>', rand_cheers[lang]['language'])
+            
+            lineUpText = ''
+            for (var j = 0; j < 5; j++){
+                lineUpText += '- \n'
+            }
+            vrchatText = vrchatText.replace('<LINE_UP>', lineUpText)
 
             let vrchatCustom = ''
             for (let j in languages){

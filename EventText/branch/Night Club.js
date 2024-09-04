@@ -5,7 +5,10 @@ const nightClubText = [
             :information_source: _Du kannst die Rolle @Event Update︱🔔 jederzeit in <id:customize> entfernen_
 
             # :beer: OCTAGON Event :notes:
+            > :door: Open doors at **<OPEN_DOORS_TIME>**
+            > _ _
             > :clock11:  Von **<START_TIME> Uhr** abends bis **<END_TIME> Uhr** morgens
+            > _ _
             > :pushpin:  [Instanzen](<https://vrchat.com/home/group/grp_a598c9ca-f698-44e7-9f54-399f1da6e203/instances>)
             _ _
             ### <QUEST_EMOJI> Event Quest
@@ -36,7 +39,10 @@ const nightClubText = [
             :information_source: _You can remove the @Event Update︱🔔 role in <id:customize> at all times_
 
             # :beer: OCTAGON Event :notes:
+            > :door: Open doors at **<OPEN_DOORS_TIME>**
+            > _ _
             > :clock11:  From **<START_TIME>** till **<END_TIME>**
+            > _ _
             > :pushpin:  [Instances](<https://vrchat.com/home/group/grp_a598c9ca-f698-44e7-9f54-399f1da6e203/instances>)
             _ _
             ### <QUEST_EMOJI> Event Quest
