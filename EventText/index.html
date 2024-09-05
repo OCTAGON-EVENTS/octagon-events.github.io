@@ -7,8 +7,7 @@
             color: #F2F3F5;
         }
         div#content, div#info{
-            display: flex;
-            justify-content: center;
+            text-align: center;
             align-items: end;
         }
         h1 {
@@ -29,6 +28,12 @@
         button:active{
             background-color: #15562B;
         }
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: left !important;
+        }
         .seperator {
             margin-top: 20px;
             min-height: 2px;
@@ -38,20 +43,34 @@
             max-width: 600px;
             margin: 0 60px;
         }
+
+        .d-none {
+            display: none;
+        }
     </style>
     <head>
         <meta charset="UTF-8">
     </head>
     <body>
-        <div id="info">⚠️ Press F5 or reload the page to regenerate ⚠️</div>
+        <div id="info">
+            ⚠️ Press F5 or reload the page to regenerate ⚠️
+            <br>
+            <input type="time" id="timeInput" name="trip-start" onchange="main()"/>
+            <input type="date" id="dateInput" name="trip-start" onchange="main()"/>
+        </div>
         <div id="content">
-            <div class="wrapper">
+            <div class="wrapper d-none">
+                <h1>Booking</h1>
+                <div id="bookingText"></div>
+                <button onclick="navigator.clipboard.writeText(document.getElementById('bookingText').innerText)">Copy</button>
+            </div>
+            <div class="wrapper d-none">
                 <h1>Discord</h1>
                 <div id="discordText"></div>
                 <button onclick="navigator.clipboard.writeText(document.getElementById('discordText').innerText)">Copy</button>
             </div>
             <div class="seperator"></div>
-            <div class="wrapper">
+            <div class="wrapper d-none">
                 <h1>VRChat</h1>
                 <div id="vrchatText"></div>
                 <button onclick="navigator.clipboard.writeText(document.getElementById('vrchatText').innerText)">Copy</button>
@@ -60,17 +79,37 @@
     </body>
     <script type="text/javascript" src="quests.js"></script>
     <script type="text/javascript" src="cheers.js"></script>
+    <script type="text/javascript" src="booking.js"></script>
     <script type="text/javascript" src="branch/Night Club.js"></script>
     <script type="text/javascript" src="branch/Rave.js"></script>
     <script type="text/javascript">
 
+        function nextDay(x){
+            var now = new Date();    
+            now.setDate(now.getDate() + (x+(7-now.getDay())) % 7);
+            return now;
+        }
+
+        document.getElementById('timeInput').value = '23:00'
+        document.getElementById('dateInput').value = new Date(Math.min(nextDay('4'), nextDay('2'))).toISOString().split('T')[0]
         var eventText = ''
+        var webLinks = ''
         switch (window.location.hash.substr(1).replace('%20', ' ')){
             case 'Night Club':
                 eventText = nightClubText;
+                webLinks = {
+                    'discord' : 'https://discord.gg/Hc63ZrFYPc',
+                    'instagram' : 'https://instagram.com/OCTAGON.Night.Club',
+                    'vrchat' : 'https://vrc.group/OCTO.8998',
+                }
                 break;
             case 'Rave':
                 eventText = raveText;
+                webLinks = {
+                    'discord' : 'https://discord.gg/w9uuPgYBjg',
+                    'instagram' : 'https://instagram.com/OCTAGON.Rave',
+                    'vrchat' : 'hhttps://vrc.group/OCTO.1975',
+                }
                 break;
         }
 
@@ -78,59 +117,107 @@
             navigator.clipboard.writeText(text);
             alert("Copied the text: " + text);
         }
-        let openDoors = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
-        let startDate = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
-        let endDate = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
-        openDoors.setHours(23, -15, 0 ,0)
-        startDate.setHours(23, 0, 0, 0)
-        endDate.setHours(startDate.getHours() + 5, 0, 0, 0)
-
-        let languages = ['en']
 
         let rand_quest = quests[Math.floor(Math.random() * quests.length)]
         let rand_cheers = cheers[Math.floor(Math.random() * cheers.length)]
         let rand_eventText = eventText[Math.floor(Math.random() * eventText.length)]
+        let openDoors = null
+        let startDate = null
+        let endDate = null
+        let languages = ['en']
+        let bookingHeadPosition = Math.floor(Math.random() * bookingHeadText.length)
+        let timeZone = null
+        let options = null
+        let timeInput = null
+        let dateInput = null
 
-        for (let i in languages){
-            let lang = languages[i]
+        function main(){
+            options = {
+                timeZone: 'Europe/Berlin',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
 
+            timeInput = document.getElementById('timeInput').value.split(':')
+            dateInput = document.getElementById('dateInput').value
+            openDoors = new Date(new Intl.DateTimeFormat('en-US', options).format(new Date(dateInput)))
+            startDate = new Date(new Intl.DateTimeFormat('en-US', options).format(new Date(dateInput)))
+            endDate = new Date(new Intl.DateTimeFormat('en-US', options).format(new Date(dateInput)))
+            openDoors.setHours(timeInput[0], timeInput[1] - 15, 0 ,0)
+            startDate.setHours(timeInput[0], timeInput[1], 0, 0)
+            endDate.setHours(startDate.getHours() + 5, timeInput[1], 0, 0)
+
+            for (let i in languages){
+                let lang = languages[i]
+
+                for (let key in rand_eventText[lang]){
+                    switch (key.toLocaleLowerCase()){
+                        case 'booking':
+                            document.getElementById('bookingText').parentElement.classList.remove('d-none')
+                            generateBookingText()
+                            break;
+                        case 'discord':
+                            document.getElementById('discordText').parentElement.classList.remove('d-none')
+                            generateDiscordText()
+                            break;
+                        case 'vrchat':
+                            document.getElementById('vrchatText').parentElement.classList.remove('d-none')
+                            generateVRChatText()
+                            break;
+                    }
+                }
+            }   
+        }
+
+        function generateDiscordText(language='en'){
             // DISCORD TEXT
-            let discordText = rand_eventText[lang]['discord']
+            let discordText = rand_eventText[language]['discord']
+
+            discordText = discordText.replace('<DISCORD>', webLinks['discord'])
+            discordText = discordText.replace('<INSTAGRAM>', webLinks['instagram'])
+            discordText = discordText.replace('<VRCHAT>', webLinks['vrchat'])
             
             discordText = discordText.replace('<OPEN_DOORS_TIME>', '<t:' + String(openDoors.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<START_TIME>', '<t:' + String(startDate.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<END_TIME>', '<t:' + String(endDate.getTime() / 1000) + ':t>')
 
             let lineUpText = ''
-            let lineUpTimes = new Date(Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }))
-            lineUpTimes.setHours(23, 0, 0, 0)
+            let lineUpTimes = new Date(new Intl.DateTimeFormat('en-US', options).format(new Date(dateInput)))
+            lineUpTimes.setHours(timeInput[0], timeInput[1], 0, 0)
             for (var j = 0; j < 5; j++){
                 lineUpText += '> <t:' + String(lineUpTimes.getTime() / 1000) + ':t> - Name\n'
-                lineUpTimes.setHours(lineUpTimes.getHours() + 1, 0, 0, 0)
+                lineUpTimes.setHours(lineUpTimes.getHours() + 1, timeInput[1], 0, 0)
             }
             discordText = discordText.replace('<LINE_UP>', lineUpText.substr(0, lineUpText.length - 1))
                 
 
             discordText = discordText.replace('<QUEST_EMOJI>', rand_quest["emoji"])
-            discordText = discordText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
+            discordText = discordText.replace('<QUEST_TITLE>', rand_quest[language]['title'])
 
-            discordText = discordText.replace('<QUEST_TEXT>', rand_quest[lang]['text'].split('\n').join("\n> "))
+            discordText = discordText.replace('<QUEST_TEXT>', rand_quest[language]['text'].split('\n').join("\n> "))
                 
-            discordText = discordText.replace('<CHEERS_TEXT>', rand_cheers[lang]['text'])
-            discordText = discordText.replace('<CHEERS_LANGUAGE>', rand_cheers[lang]['language'])
-            discordText = discordText.replace('<CHEERS_PRONOUNCIATION>', rand_cheers[lang]['pronunciation'])
+            discordText = discordText.replace('<CHEERS_TEXT>', rand_cheers[language]['text'])
+            discordText = discordText.replace('<CHEERS_LANGUAGE>', rand_cheers[language]['language'])
+            discordText = discordText.replace('<CHEERS_PRONOUNCIATION>', rand_cheers[language]['pronunciation'])
 
-            document.getElementById('discordText').innerText += discordText
+            document.getElementById('discordText').innerText = discordText
             document.getElementById('discordText').innerHTML += '<br>'
+        }
 
+        function generateVRChatText(language='en'){
             // VRCHAT TEXT
-            let vrchatText = rand_eventText[lang]['vrchat']
+            let vrchatText = rand_eventText[language]['vrchat']
 
             vrchatText = vrchatText.replace('<QUEST_EMOJI>', rand_quest["emoji"])
-            vrchatText = vrchatText.replace('<QUEST_TITLE>', rand_quest[lang]['title'])
-            vrchatText = vrchatText.replace('<QUEST_TEXT>', rand_quest[lang]['text'])
-            vrchatText = vrchatText.replace('<CHEERS_TEXT>', rand_cheers[lang]['text'])
-            vrchatText = vrchatText.replace('<CHEERS_LANGUAGE>', rand_cheers[lang]['language'])
+            vrchatText = vrchatText.replace('<QUEST_TITLE>', rand_quest[language]['title'])
+            vrchatText = vrchatText.replace('<QUEST_TEXT>', rand_quest[language]['text'])
+            vrchatText = vrchatText.replace('<CHEERS_TEXT>', rand_cheers[language]['text'])
+            vrchatText = vrchatText.replace('<CHEERS_LANGUAGE>', rand_cheers[language]['language'])
             
             lineUpText = ''
             for (var j = 0; j < 5; j++){
@@ -148,8 +235,32 @@
             }
             vrchatText = vrchatText.replace('<CHEERS_CUSTOM>', vrchatCustom.substring(0, vrchatCustom.length))
                 
-            document.getElementById('vrchatText').innerText += vrchatText
-
+            document.getElementById('vrchatText').innerText = vrchatText
         }
+
+        function generateBookingText(language='en'){
+
+            // BOOKING TEXT
+            let bookingText = rand_eventText[language]['booking']
+
+            let lineUpText = ''
+            let lineUpTimes = new Date(new Intl.DateTimeFormat('en-US', options).format(new Date(dateInput)))
+            lineUpTimes.setHours(timeInput[0], timeInput[1], 0, 0)
+
+            bookingText = bookingText.replace('<DISCORD>', webLinks['discord'])
+            bookingText = bookingText.replace('<BOOKING_REQUEST>', bookingHeadText[bookingHeadPosition][language])
+            bookingText = bookingText.replace('<START_DATE>', '<t:' + String(lineUpTimes.getTime() / 1000) + ':d>')
+
+            for (var j = 0; j < 5; j++){
+                lineUpText += '> Slot ' + (j + 1) + ' - <t:' + String(lineUpTimes.getTime() / 1000) + ':t>\n'
+                lineUpTimes.setHours(lineUpTimes.getHours() + 1, timeInput[1], 0, 0)
+            }
+
+            bookingText = bookingText.replace('<SLOTS>', lineUpText)
+                
+            document.getElementById('bookingText').innerText = bookingText
+        }
+
+        main()
     </script>
 </html>

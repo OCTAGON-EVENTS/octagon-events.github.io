@@ -20,7 +20,7 @@ const nightClubText = [
             _<CHEERS_TEXT>!_
             ||<CHEERS_LANGUAGE>: <CHEERS_PRONOUNCIATION>||
 
-            :vrchat: [VRChat](<https://vrc.group/OCTO.8998>) | :discord: [Discord](<https://discord.gg/OCTAGON>) | :instagram: [Instagram](<https://instagram.com/OCTAGON.Night.Club>)
+            :discord: [Discord](<<DISCORD>>) | :instagram: [Instagram](<<INSTAGRAM>>) | :vrchat: [VRChat](<<VRCHAT>>)
             _ _`,
 
             "vrchat" : `
