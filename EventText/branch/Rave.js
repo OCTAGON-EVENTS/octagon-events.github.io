@@ -2,7 +2,7 @@ const raveText = [
     {
         "en": {
             "discord": `
-            :information_source: _You can remove the @Event Update︱🔔 role in <id:customize> at all times_
+            :information_source: _You can remove the @Event Ping︱🔔 role in <id:customize> at all times_
 
             # :cd: OCTAGON Event :headphones:
             > :door: Open doors at **<OPEN_DOORS_TIME>**

@@ -2,7 +2,7 @@ const nightClubText = [
     { 
         "de" : {
             "discord" : `
-            :information_source: _Du kannst die Rolle @Event Update︱🔔 jederzeit in <id:customize> entfernen_
+            :information_source: _Du kannst die Rolle @Event Ping︱🔔 jederzeit in <id:customize> entfernen_
 
             # :beer: OCTAGON Event :notes:
             > :door: Open doors at **<OPEN_DOORS_TIME>**
@@ -36,7 +36,7 @@ const nightClubText = [
         },
         "en": {
             "discord": `
-            :information_source: _You can remove the @Event Update︱🔔 role in <id:customize> at all times_
+            :information_source: _You can remove the @Event Ping︱🔔 role in <id:customize> at all times_
 
             # :beer: OCTAGON Event :notes:
             > :door: Open doors at **<OPEN_DOORS_TIME>**
