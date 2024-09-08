@@ -101,6 +101,7 @@
                     'discord' : 'https://discord.gg/Hc63ZrFYPc',
                     'instagram' : 'https://instagram.com/OCTAGON.Night.Club',
                     'vrchat' : 'https://vrc.group/OCTO.8998',
+                    'linktree' : 'https://linktr.ee/octagon.events'
                 }
                 break;
             case 'Rave':
@@ -109,6 +110,7 @@
                     'discord' : 'https://discord.gg/w9uuPgYBjg',
                     'instagram' : 'https://instagram.com/OCTAGON.Rave',
                     'vrchat' : 'hhttps://vrc.group/OCTO.1975',
+                    'linktree' : 'https://linktr.ee/octagon.events'
                 }
                 break;
         }
@@ -181,6 +183,7 @@
             discordText = discordText.replace('<DISCORD>', webLinks['discord'])
             discordText = discordText.replace('<INSTAGRAM>', webLinks['instagram'])
             discordText = discordText.replace('<VRCHAT>', webLinks['vrchat'])
+            discordText = discordText.replace('<LINKTREE>', webLinks['linktree'])
             
             discordText = discordText.replace('<OPEN_DOORS_TIME>', '<t:' + String(openDoors.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<START_TIME>', '<t:' + String(startDate.getTime() / 1000) + ':t>')
