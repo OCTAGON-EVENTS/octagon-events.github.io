@@ -193,7 +193,7 @@
             let lineUpTimes = new Date(new Intl.DateTimeFormat('en-US', options).format(new Date(dateInput)))
             lineUpTimes.setHours(timeInput[0], timeInput[1], 0, 0)
             for (var j = 0; j < 5; j++){
-                lineUpText += '> <t:' + String(lineUpTimes.getTime() / 1000) + ':t> - Name\n'
+                lineUpText += '> <t:' + String(lineUpTimes.getTime() / 1000) + ':t> - [Name](<>)\n'
                 lineUpTimes.setHours(lineUpTimes.getHours() + 1, timeInput[1], 0, 0)
             }
             discordText = discordText.replace('<LINE_UP>', lineUpText.substr(0, lineUpText.length - 1))
