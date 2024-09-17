@@ -185,6 +185,7 @@
             discordText = discordText.replace('<VRCHAT>', webLinks['vrchat'])
             discordText = discordText.replace('<LINKTREE>', webLinks['linktree'])
             
+            discordText = discordText.replace('<EVENT_DATE_FULL_MONTH>', '<t:' + String(startDate.getTime() / 1000) + ':D>')
             discordText = discordText.replace('<OPEN_DOORS_TIME>', '<t:' + String(openDoors.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<START_TIME>', '<t:' + String(startDate.getTime() / 1000) + ':t>')
             discordText = discordText.replace('<END_TIME>', '<t:' + String(endDate.getTime() / 1000) + ':t>')

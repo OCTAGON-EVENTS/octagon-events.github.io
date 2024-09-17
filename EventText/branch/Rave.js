@@ -4,7 +4,7 @@ const raveText = [
             "discord": `
             :information_source: _You can remove the @Event Ping︱🔔 role in <id:customize> at all times_
 
-            # :cd: OCTAGON Event :headphones:
+            # :cd: OCTAGON Rave on <EVENT_DATE_FULL_MONTH> :headphones:
             > :door: Open doors at **<OPEN_DOORS_TIME>**
             > _ _
             > :clock11:  From **<START_TIME>** till **<END_TIME>**
