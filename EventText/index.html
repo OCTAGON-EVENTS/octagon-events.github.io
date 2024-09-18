@@ -256,7 +256,7 @@
             bookingText = bookingText.replace('<START_DATE>', '<t:' + String(lineUpTimes.getTime() / 1000) + ':d>')
 
             for (var j = 0; j < 5; j++){
-                lineUpText += '> Slot ' + (j + 1) + ' - <t:' + String(lineUpTimes.getTime() / 1000) + ':t>\n'
+                lineUpText += '<t:' + String(lineUpTimes.getTime() / 1000) + ':t> - [Slot_' + (j + 1) + '](<https://discord.com/channels/1267142913595412491/__________________>)\n'
                 lineUpTimes.setHours(lineUpTimes.getHours() + 1, timeInput[1], 0, 0)
             }
 
