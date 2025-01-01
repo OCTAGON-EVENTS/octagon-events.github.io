@@ -1,0 +1,206 @@
+{
+  "0": {
+    "Name" : "Shethzor",
+    "Branch": "",
+    "Role": "OCTAGON Owner",
+    "Image": "Shethzor.jpg",
+    "EasterEgg" : {
+      "Name" : "Sharhorse",
+      "Branch": "",
+      "Role": "Hobbyhorser",
+      "Image": ""
+    }
+  },
+  "1": {
+    "Name" : "Hiiemii",
+    "Branch": "",
+    "Role": "OCTAGON Co-Owner",
+    "Image" : "Hiiemii.jpg",
+    "EasterEgg" : {
+      "Name" : "Heiimii",
+      "Branch": "",
+      "Role": "Goner",
+      "Image": ""
+    }
+  },
+  "2": {
+    "Name" : "ShōgunWasHere",
+    "Branch": "",
+    "Role": "OCTAGON Co-Owner",
+    "Image": "Shogun.jpg",
+    "EasterEgg" : {
+      "Name" : "Shōgoon",
+      "Branch": "",
+      "Role": "Professional gooner",
+      "Image": ""
+    }
+  },
+  "3": {
+    "Name" : "DerBasti95",
+    "Branch": "Rave",
+    "Role": "Branch Owner",
+    "Image" : "Basti.jpg",
+    "EasterEgg" : {
+      "Name" : "Gassi95",
+      "Branch": "",
+      "Role": "Part-time dog",
+      "Image": ""
+    }
+  },
+  "4": {
+    "Name" : "FoyxPireta",
+    "Branch": "NightClub",
+    "Role": "Branch Owner",
+    "Image" : "Foyx.jpg",
+    "EasterEgg" : {
+      "Name" : "Traitor",
+      "Branch": "",
+      "Role": "Talker",
+      "Image": ""
+    }
+  },
+  "5": {
+    "Name" : "Ｄａｎｉｅｌｏ",
+    "Branch": "NightClub",
+    "Role": "Admin",
+    "Image" : "Danielo.jpg",
+    "EasterEgg" : {
+      "Name" : "General Daniel",
+      "Branch": "",
+      "Role": "Generally",
+      "Image": ""
+    }
+  },
+  "6": {
+    "Name" : "~Kyu~",
+    "Branch": "NightClub",
+    "Role": "Admin",
+    "Image" : "Kyu.jpg",
+    "EasterEgg" : {
+      "Name" : "Gyu",
+      "Branch": "",
+      "Role": "Bruno",
+      "Image": ""
+    }
+  },
+  "7": {
+    "Name" : "Nolen1124",
+    "Branch": "NightClub",
+    "Role": "Admin",
+    "Image" : "Nolen.jpg",
+    "EasterEgg" : {
+      "Name" : "Yeslen1124",
+      "Branch": "",
+      "Role": "Maybe sayer",
+      "Image": ""
+    }
+  },
+  "8": {
+    "Name" : "_VenoX_",
+    "Branch": "NightClub",
+    "Role": "Admin",
+    "Image" : "Venox.jpg",
+    "EasterEgg" : {
+      "Name" : "Vencocks",
+      "Branch": "",
+      "Role": "Crusty sock",
+      "Image": ""
+    }
+  },
+  "9": {
+    "Name" : "༒BloodHound༒",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Blood.jpg",
+    "EasterEgg" : {
+      "Name" : "༒BlackPudding༒",
+      "Branch": "",
+      "Role": "Crusty Pudding",
+      "Image": ""
+    }
+  },
+  "10": {
+    "Name" : "Manο",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Mano.jpg",
+    "EasterEgg" : {
+      "Name" : "Малоmeter",
+      "Branch": "",
+      "Role": "Imperial",
+      "Image": ""
+    }
+  },
+  "11": {
+    "Name" : "Miyujii",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Miyujii.jpg",
+    "EasterEgg" : {
+      "Name" : "Muyjiji",
+      "Branch": "",
+      "Role": "What?",
+      "Image": ""
+    }
+  },
+  "12": {
+    "Name" : "_Nagisa_",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Nagisa.jpg",
+    "EasterEgg" : {
+      "Name" : "NaGUHsa",
+      "Branch": "",
+      "Role": "GUH",
+      "Image": ""
+    }
+  },
+  "13": {
+    "Name" : "Sperrow",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Sperrow.jpg",
+    "EasterEgg" : {
+      "Name" : "Bird",
+      "Branch": "",
+      "Role": "Chirper",
+      "Image": ""
+    }
+  },
+  "14": {
+    "Name" : "Steiner96",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Steiner.jpg",
+    "EasterEgg" : {
+      "Name" : "Static Stone96",
+      "Branch": "",
+      "Role": "Undynamic",
+      "Image": ""
+    }
+  },
+  "15": {
+    "Name" : "ʚYami",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Yami.jpg",
+    "EasterEgg" : {
+      "Name" : "ʚJam",
+      "Branch": "",
+      "Role": "Bread enjoyer",
+      "Image": ""
+    }
+  },
+  "16": {
+    "Name" : "ʚYumi",
+    "Branch": "NightClub",
+    "Role": "Moderator",
+    "Image" : "Yumi.jpg",
+    "EasterEgg" : {
+      "Name" : "ʚYummi",
+      "Branch": "",
+      "Role": "Flavorless",
+      "Image": ""
+    }
+  }
+}
