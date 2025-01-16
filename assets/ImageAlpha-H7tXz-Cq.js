@@ -1,0 +1,1 @@
+import{d as s,o as t,c as o,f as n,g as a}from"./index-DDtEDH8A.js";const r=["src"],p=s({__name:"ImageAlpha",setup(c){const e=a();return(u,_)=>(t(),o("img",{src:n(e).hash.substring(1)},null,8,r))}});export{p as default};

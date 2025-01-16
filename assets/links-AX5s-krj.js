@@ -1,1 +1,0 @@
-const s="https://bsky.app/profile/octagon-nightclub.bsky.social",t="https://discord.gg/Hc63ZrFYPc",c="https://instagram.com/OCTAGON.NC",o="https://vrc.group/OCTO.8998",a="https://x.com/OCTAGON_NC",n={Bluesky:s,Discord:t,Instagram:c,VRChat:o,X:a};export{n as l};
