@@ -1,1 +1,0 @@
-const t="https://bsky.app/profile/octagon-rave.bsky.social",s="https://discord.gg/w9uuPgYBjg",o="https://instagram.com/OCTAGON.RV",c="https://tiktok.com/@OCTAGON_Events",a="https://vrc.group/OCTO.1975",n="https://x.com/OCTAGON_RV",p="https://www.youtube.com/@OCTAGON_Rave",k={Bluesky:t,Discord:s,Instagram:o,TikTok:c,VRChat:a,X:n,YouTube:p};export{k as l};
